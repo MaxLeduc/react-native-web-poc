@@ -1,51 +1,33 @@
-import React from 'react'
-import { ScrollView, ActivityIndicator, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
 
 import UserList from '../../common/components/user-list/user-list'
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'whitesmoke',
-  },
-  centering: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8,
-    height: '100vh',
-  },
-})
+import { Container, StyledActivityIndicator } from './styled'
 
-class Home extends React.Component {
-  state = {
-    users: [],
-    loading: true,
-  }
+const Home = () => {
+  const [users, setUsers] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
-  componentDidMount() {
-    this.getUsers()
-  }
-
-  async getUsers() {
+  const getUsers = async () => {
     const res = await fetch('https://randomuser.me/api/?results=20')
     const { results } = await res.json()
-    this.setState({ users: [...results], loading: false })
+    setUsers([...results])
+    setIsLoading(false)
   }
 
-  render() {
-    return (
-      <ScrollView noSpacer={true} noScroll={true} style={styles.container}>
-        {this.state.loading ? (
-          <ActivityIndicator
-            style={[styles.centering]}
-            color="#ff8179"
-            size="large"
-          />
-        ) : (
-          <UserList users={this.state.users} />
-        )}
-      </ScrollView>
-    )
-  }
+  useEffect(() => {
+    getUsers()
+  }, [])
+
+  return (
+    <Container noSpacer={true} noScroll={true}>
+      {isLoading ? (
+        <StyledActivityIndicator color="#ff8179" size="large" />
+      ) : (
+        <UserList users={users} />
+      )}
+    </Container>
+  )
 }
 
 export default Home
