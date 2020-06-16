@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import UserList from '../../common/components/user-list/user-list'
+import UserList from 'common/components/user-list'
 
 import { Container, StyledActivityIndicator } from './styled'
 

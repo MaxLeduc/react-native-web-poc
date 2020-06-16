@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppRegistry, StyleSheet, View } from 'react-native'
 
-import Home from './core/home/home'
+import Home from './core/home'
 
 class App extends React.Component {
   render() {
