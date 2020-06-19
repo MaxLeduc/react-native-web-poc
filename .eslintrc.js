@@ -16,5 +16,6 @@ module.exports = {
   rules: {
     'jsx-a11y/anchor-is-valid': 'off', // when using next/link, <a> does not need an href attribute
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
 }
