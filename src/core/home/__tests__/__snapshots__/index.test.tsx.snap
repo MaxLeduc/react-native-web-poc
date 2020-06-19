@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders without crashing 1`] = `
+<div
+  className="css-view-1dbjc4n r-height-zh076v"
+>
+  <div
+    className="css-view-1dbjc4n r-alignItems-1awozwy r-flex-13awgt0 r-justifyContent-1777fci"
+  >
+    <div
+      className="css-text-901oao r-color-howw7u"
+      dir="auto"
+    >
+      Welcome to the future.
+    </div>
+  </div>
+</div>
+`;
