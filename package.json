@@ -32,12 +32,10 @@
   ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,html}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*/**/*.{ts,js,tsx,jsx}": [
-      "eslint --fix --max-warnings 0",
-      "git add"
+      "eslint --fix --max-warnings 0"
     ]
   },
   "eslintConfig": {
